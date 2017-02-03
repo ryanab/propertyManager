@@ -1,0 +1,3 @@
+export default {
+    PROPERTIES_RECEIVED: 'PROPERTIES_RECEIVED'
+}
