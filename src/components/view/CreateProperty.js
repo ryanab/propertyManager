@@ -1,18 +1,11 @@
 import React, { Component } from 'react'
 
-class CreateProperty extends Component {
+export default (props) => {
   
-  componentDidMount(){
-    this.props.createProperty('best test')
-  }
-  
-  render(){
-    return(
-      <div>
-        <h4>Create New Property</h4>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h4>Create New Property</h4>
+      <input type="text" />
+    </div>
+  )
 }
-
-export default CreateProperty
