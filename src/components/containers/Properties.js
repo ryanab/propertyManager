@@ -4,14 +4,21 @@ import { connect } from 'react-redux'
 import { CreateProperty } from '../view'
 
 class Properties extends Component {
-    
+
+    //can we set state without calling constructor
+
     componentDidMount(){
         this.props.fetchProperties(null)
+    }
+
+    propertyOnChange(key, event){
+        const value = event.target.value
+        console.log(key + ': ' + value)    
     }
     
     createProperty(params){
         //this.props.createProperty()
-        console.log('TEST: Create Property' + params)
+        console.log('TEST: Create Property' + JSON.stringify(params))
     }
     
     render(){
@@ -29,7 +36,7 @@ class Properties extends Component {
                     :
                     <h4>No properties created yet</h4>
                 }
-                <CreateProperty createProperty={this.createProperty.bind(this)} />
+                <CreateProperty createProperty={this.createProperty.bind(this)} update={this.propertyOnChange.bind(this)} submit={this.createProperty.bind(this)}/>
             </div>
         )
     }
