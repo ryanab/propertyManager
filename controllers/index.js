@@ -1,5 +1,7 @@
 var PropertyController = require('./PropertyController')
+var ProfileController = require('./ProfileController')
 
 module.exports = {
-    property: PropertyController
+    property: PropertyController,
+    profile: ProfileController
 }

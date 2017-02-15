@@ -1,36 +1,47 @@
 import React, { Component } from 'react'
 import actions from '../../actions'
 import { connect } from 'react-redux'
-import { CreateProperty } from '../view'
+import { CreateProperty, Property } from '../view'
 
 class Properties extends Component {
 
-    //can we set state without calling constructor
-
+    constructor(){
+        super()
+        this.state = {
+            property: {}
+        }
+    }
+    
     componentDidMount(){
         this.props.fetchProperties(null)
     }
 
     propertyOnChange(key, event){
+        event.preventDefault()
         const value = event.target.value
-        console.log(key + ': ' + value)    
+        let updated = Object.assign({}, this.state.property)
+        updated[key] = value
+        this.setState({
+            property: updated    
+        })
     }
     
-    createProperty(params){
-        //this.props.createProperty()
-        console.log('TEST: Create Property' + JSON.stringify(params))
+    createProperty(event){
+        event.preventDefault()
+        this.props.createProperty(this.state.property)
     }
     
     render(){
+        console.log(JSON.stringify(this.props.properties))
         return(
             <div>
                 <h2>Properties </h2>
                 {
                     (this.props.properties.length!=0)
                     ?
-                    <ul>
+                    <ul style={{'paddingLeft': 0, 'listStyle': 'none'}}>
                         {this.props.properties.map((property, i) => {
-                            <li> {property.address} </li>
+                            return <li key={property.id}> <Property property={property} /> </li>
                         })}
                     </ul>
                     :

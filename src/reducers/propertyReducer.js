@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
             return updated
         
         case constants.PROPERTY_CREATED:
-            let updatedList = state.list
+            let updatedList = Object.assign([], state.list)
             updatedList.push(action.payload)
             updated.list = updatedList
             return updated
