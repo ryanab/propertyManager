@@ -4,7 +4,7 @@ var ProfileSchema = new mongoose.Schema({
   email: {type:String, default:''},
   phoneNumber: {type:String, default:''},
   name: {type:String, default:''},
-  role: {type:String, default:''},
+  role: {type:String, default:'tenant'},
   timestamp: {type:Date, default: Date.now()}
 })
 

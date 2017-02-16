@@ -32,7 +32,6 @@ class Properties extends Component {
     }
     
     render(){
-        console.log(JSON.stringify(this.props.properties))
         return(
             <div>
                 <h2>Properties </h2>

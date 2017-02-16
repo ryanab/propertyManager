@@ -1,5 +1,7 @@
 import Properties from './Properties'
+import Authenticate from './Authenticate'
 
-export{
-    Properties
+export {
+    Properties,
+    Authenticate
 }

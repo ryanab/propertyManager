@@ -47,5 +47,17 @@ export default {
     return (dispatch) => {
       return dispatch(postRequest('/api/property', params, constants.PROPERTY_CREATED))
     }
+  },
+
+  login: (credentials) => {
+    return (dispatch) => {
+      return dispatch(postRequest('/account/login', credentials, constants.CURRENT_USER_RECEIVED))
+    }
+  },
+
+  register: (credentials) => {
+    return (dispatch) => {
+      return dispatch(postRequest('/account/register', credentials, constants.CURRENT_USER_RECEIVED))
+    }
   }
-  }
+}

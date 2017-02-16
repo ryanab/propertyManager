@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Properties } from '../containers'
+import { Properties, Authenticate } from '../containers'
 
 class Home extends Component{
     render(){
@@ -10,6 +10,7 @@ class Home extends Component{
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
+                            <Authenticate />
                             Activity
                         </div>
                         <div className="col-md-8">
