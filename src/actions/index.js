@@ -11,6 +11,7 @@ import { APIManager } from '../utils'
           payload: payload,
           params: params
         })
+        return response
       })
       .catch(err => {
         throw err        
@@ -28,6 +29,7 @@ import { APIManager } from '../utils'
           payload: payload,
           params: params
         })
+        return response
       })
       .catch(err => {
         throw err        

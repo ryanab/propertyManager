@@ -24,8 +24,15 @@ class Authenticate extends Component{
 
   login(event){
     event.preventDefault()
-    this.props.login(this.state.credentials)    
+    this.props.login(this.state.credentials)
+    .then(()=>{
+      console.log('test')
+    })
+    .catch(()=>{
+      console.log('error')
+    })
   }
+
   //add error handling, password confirms, etc.
   register(event){
     event.preventDefault()
