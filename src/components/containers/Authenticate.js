@@ -25,11 +25,11 @@ class Authenticate extends Component{
   login(event){
     event.preventDefault()
     this.props.login(this.state.credentials)
-    .then(()=>{
-      console.log('test')
+    .then((response)=>{
+      
     })
-    .catch(()=>{
-      console.log('error')
+    .catch((error)=>{
+      alert(error.message)
     })
   }
 
