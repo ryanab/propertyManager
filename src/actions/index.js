@@ -59,5 +59,14 @@ export default {
     return (dispatch) => {
       return dispatch(postRequest('/account/register', credentials, constants.CURRENT_USER_RECEIVED))
     }
+  },
+
+  togglePropertyDisplayType: (id) => {
+    return (dispatch) => {
+      dispatch ({
+        type: constants.TOGGLE_PROPERTY_DISPLAY_TYPE,
+        id: id
+      })
+    }
   }
 }

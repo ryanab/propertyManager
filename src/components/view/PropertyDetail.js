@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 export default (props) => {
   return (
     <div>
-      AVAILABILITIES
+      MORE
+      PROPERTY DETAILS
+      THAN BEFORE
     </div>
   )
 }

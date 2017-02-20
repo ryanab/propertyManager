@@ -1,11 +1,13 @@
 import CreateProperty from './CreateProperty'
-import Property from './Property'
+import PropertyDetail from './PropertyDetail'
+import PropertySummary from './PropertySummary'
 import Login from './Login'
 import Register from './Register'
 
 export {
   CreateProperty,
-  Property,
+  PropertyDetail,
+  PropertySummary,
   Login,
   Register
 }
