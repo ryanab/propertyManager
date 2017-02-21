@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { Home } from './components/layout'
+import { Home, TenantHome } from './components/layout'
 import { Provider } from 'react-redux'
 import store from './stores'
 
+//removed Home component while I work on TenantHome
 const app = (
     <Provider store={ store.configureStore() }>
         <div>
-            <Home />
+            <TenantHome />
         </div>
     </Provider >
 )
