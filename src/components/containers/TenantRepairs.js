@@ -4,10 +4,6 @@ import actions from '../../actions'
 
 class TenantRepairs extends Component{
   
-  componentDidMount(){
-    this.props.fetchRecentTransactions()
-  }
-  
   render(){
     return(
       <div>

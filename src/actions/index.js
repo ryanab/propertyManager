@@ -48,6 +48,12 @@ export default {
       return dispatch(postRequest('/api/property', params, constants.PROPERTY_CREATED))
     }
   },
+  
+  fetchRecentTransactions: (params) => {
+    return (dispatch) => {
+      return dispatch(getRequest('/api/transaction', params, constants.RECENT_TENANT_TRANSACTIONS_RECEIVED))
+    }
+  },
 
   login: (credentials) => {
     return (dispatch) => {

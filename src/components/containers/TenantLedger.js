@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 import actions from '../../actions'
 
 class TenantLedger extends Component{
+
+  componentDidMount(){
+    this.props.fetchRecentTransactions()//pass in tenant ID
+  }  
+  
   render(){
     return(
       <div>
@@ -20,7 +25,7 @@ const stateToProps = (state) => {
 
 const dispatchToProps = (dispatch) => {
   return {
-    fetchRecentTransactions: (id) => dispatch(actions.fetchRecentTransactions(id))
+    fetchRecentTransactions: (params) => dispatch(actions.fetchRecentTransactions(params))
   }
 }
 
