@@ -5,6 +5,7 @@ var PropertySchema = new mongoose.Schema({
     state: {type: String, default:''},
     zip: {type: String, default:''},
     geo: {type: [Number], index: '2d'},
+    units: {type: [String], default:[]},
     timestamp: {type:Date, default: Date.now()}
 })
 
@@ -15,6 +16,7 @@ PropertySchema.methods.summary = function(){
        state: this.state,
        zip: this.zip,
        geo: this.geo,
+       units: this.units,
        timestamp: this.timestamp,
        id: this._id.toString()
     }
