@@ -13,6 +13,7 @@ module.exports = {
           resolve(transactions)
           return
         }
+
         var list = []
         transactions.forEach(function(transaction){
           list.push(transaction.summary())

@@ -12,3 +12,5 @@ class TenantRepairs extends Component{
     )
   }
 }
+
+export default TenantRepairs

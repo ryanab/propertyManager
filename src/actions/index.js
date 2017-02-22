@@ -37,6 +37,12 @@ import { APIManager } from '../utils'
 
 export default {
   
+  testDataHelper: (path, params) => {
+    return (dispatch) => {
+      return dispatch(postRequest(path, params, null))
+    }
+  },
+  
   fetchProperties: (params) => {
     return (dispatch) => {
       return dispatch(getRequest('/api/property', params, constants.PROPERTIES_RECEIVED))
@@ -64,6 +70,12 @@ export default {
   register: (credentials) => {
     return (dispatch) => {
       return dispatch(postRequest('/account/register', credentials, constants.CURRENT_USER_RECEIVED))
+    }
+  },
+  
+  fetchCurrentUser: () => {
+    return (dispatch) => {
+      return dispatch(getRequest('/account/currentuser', null, constants.CURRENT_USER_RECEIVED))
     }
   }
 }

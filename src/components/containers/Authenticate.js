@@ -12,6 +12,13 @@ class Authenticate extends Component{
     }
   }
   
+  componentDidMount(){
+    this.props.fetchCurrentUser()
+  }
+  
+  componentDidUpdate(){
+  }
+  
   onChildInputChange(key, event){
     event.preventDefault()
     const value = event.target.value
@@ -58,7 +65,8 @@ const stateToProps = (state) => {
 const dispatchToProps = (dispatch) => {
   return {
     login: (credentials) => dispatch(actions.login(credentials)),
-    register: (credentials) => dispatch(actions.register(credentials))
+    register: (credentials) => dispatch(actions.register(credentials)),
+    fetchCurrentUser: () => dispatch(actions.fetchCurrentUser())
   }
 }
 

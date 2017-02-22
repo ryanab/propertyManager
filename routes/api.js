@@ -16,6 +16,7 @@ router.get('/:resource', function(req, res, next) {
     
     controller.find(req.query, false)
     .then(function(results){
+        console.log(results)
         res.json({
             confirmation: 'success',
             data: results

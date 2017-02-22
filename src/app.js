@@ -8,7 +8,7 @@ import store from './stores'
 const app = (
     <Provider store={ store.configureStore() }>
         <div>
-            <TenantHome />
+          <TenantHome />
         </div>
     </Provider >
 )

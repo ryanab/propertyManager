@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
   switch(action.type){
 
     case constants.RECENT_TENANT_TRANSACTIONS_RECEIVED:
-      updated[action.params.id] = action.payload
+      updated[action.params.tenant] = action.payload
       return updated
         
     default:

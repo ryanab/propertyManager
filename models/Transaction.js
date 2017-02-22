@@ -9,10 +9,10 @@ var TransactionSchema = new mongoose.Schema({
 
 TransactionSchema.methods.summary = function(){
     var summary = {
-       tenant: this.address,
-       amount: this.city,
-       description: this.state,
-       date: this.zip,
+       tenant: this.tenant,
+       amount: this.amount,
+       description: this.description,
+       date: this.date,
        timestamp: this.timestamp,
        id: this._id.toString()
     }
