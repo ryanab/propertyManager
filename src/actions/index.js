@@ -42,7 +42,19 @@ export default {
       return dispatch(postRequest(path, params, null))
     }
   },
+
+  submitMessage: (params) => {
+    return (dispatch) => {
+      return dispatch(postRequest('/api/message', params, constants.MESSAGE_CREATED))
+    }
+  },
   
+  fetchMessages: (params) => {
+    return (dispatch) => {
+      return dispatch(getRequest('/api/message', params, constants.MESSAGES_RECEIVED))
+    }
+  },
+
   fetchProperties: (params) => {
     return (dispatch) => {
       return dispatch(getRequest('/api/property', params, constants.PROPERTIES_RECEIVED))

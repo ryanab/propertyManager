@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import { accountReducer, propertyReducer, transactionReducer } from '../reducers'
+import { accountReducer, propertyReducer, transactionReducer, messageReducer } from '../reducers'
 
 var store;
 
@@ -10,7 +10,8 @@ export default {
 		const reducers = combineReducers({
       transaction: transactionReducer,
     	property: propertyReducer,
-			account: accountReducer
+			account: accountReducer,
+			message: messageReducer
 		})
 
 		store = createStore(
