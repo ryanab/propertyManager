@@ -87,6 +87,7 @@ router.post('/:action', function(req, res, next){
   }
 
   if(action=='login'){
+    console.log(req.body)
     Profile.find({email: req.body.email}, true)
     .then(function(results){
       if(results.length==0){

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Login, Register } from '../view'
 import { connect } from 'react-redux'
 import actions from '../../actions'
+import { Redirect } from 'react-router'
 
 class Authenticate extends Component{
 
@@ -33,7 +34,6 @@ class Authenticate extends Component{
     event.preventDefault()
     this.props.login(this.state.credentials)
     .then((response)=>{
-      
     })
     .catch((error)=>{
       alert(error.message)
