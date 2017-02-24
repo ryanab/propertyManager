@@ -9,9 +9,8 @@ import {Route, Router, IndexRoute, browserHistory, Redirect } from 'react-router
 const app = (
   <Provider store={ store.configureStore() }>
     <Router history={browserHistory}>
-      <div>
         <Route path="/" component={Home} />
-      </div>
+        <Route path="/home" component={TenantHome} />
     </Router>
   </Provider >
 )
