@@ -8,28 +8,27 @@ class TenantLedger extends Component{
   constructor(){
     super()
     this.state = {
-      billingInquiry: {}
+      message: {}
     }
   }
 
   componentDidMount(){
     //this.props.fetchRecentTransactions({tenant: this.props.user.id}) 
     this.props.fetchRecentTransactions({tenant: '58a5efb3c8d85e594db46150'}) // using hard coded ID for now; as we are moving auth flow to Home
-    this.props.fetchMessages({tenant: '58a5efb3c8d85e594db46150', category: 'billing'})
   }
 
   inquiryOnChange(key, event){
     event.preventDefault()
-    let updated = Object.assign({}, this.state.billingInquiry)
+    let updated = Object.assign({}, this.state.message)
     updated[key] = event.target.value
     this.setState({
-      billingInquiry: updated
+      message: updated
     })
   }
   
   submitInquiry(event){
     event.preventDefault()
-    let updated=Object.assign({}, this.state.billingInquiry)
+    let updated=Object.assign({}, this.state.message)
     //tenant content subject category
     updated.tenant = this.props.user.id
     updated.category = 'billing'

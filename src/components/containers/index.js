@@ -1,11 +1,11 @@
 import Properties from './Properties'
 import Authenticate from './Authenticate'
 import TenantLedger from './TenantLedger'
-import TenantRepairs from './TenantRepairs'
+import ChatHistory from './ChatHistory'
 
 export{
     Properties,
     TenantLedger,
-    TenantRepairs,
-    Authenticate
+    Authenticate,
+    ChatHistory
 }

@@ -4,8 +4,8 @@ import transactionReducer from './transactionReducer'
 import messageReducer from './messageReducer'
 
 export {
-    propertyReducer,
-    accountReducer,
-    transactionReducer,
-    messageReducer
+  propertyReducer,
+  accountReducer,
+  transactionReducer,
+  messageReducer
 }
