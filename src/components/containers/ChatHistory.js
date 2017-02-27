@@ -13,12 +13,12 @@ class ChatHistory extends Component{
 
   componentDidMount(){
     //this.props.fetchRecentTransactions({tenant: this.props.user.id}) 
-    this.props.fetchMessages({tenant: '58a5efb3c8d85e594db46150', category: 'billing'})
+    this.props.fetchMessages({tenant: '58a5efb3c8d85e594db46150'})
   }
 
   inquiryOnChange(key, event){
     event.preventDefault()
-    let updated = Object.assign({}, this.state.message)
+    let updated = Object.assign({}, this.state)
     updated[key] = event.target.value
     this.setState({
       message: updated
@@ -29,8 +29,9 @@ class ChatHistory extends Component{
     event.preventDefault()
     let updated=Object.assign({}, this.state.message)
     //tenant content subject category
-    updated.tenant = this.props.user.id
-    updated.category = 'billing'
+    updated.tenant = '58a5efb3c8d85e594db46150'
+    //updated.tenant = this.props.user.id
+    updated.category = 'general'
     this.props.submitMessage(updated)
   }
 
@@ -65,14 +66,15 @@ class ChatHistory extends Component{
                             }
                     </div>
                     <div className="chat-form">
-                        <div className="input-cont">
-                            <input className="form-control" type="text" placeholder="Type a message here..." /> </div>
-                        <div className="btn-cont">
-                            <span className="arrow"> </span>
-                            <a href="" className="btn blue icn-only">
-                                <i className="fa fa-check icon-white"></i>
-                            </a>
-                        </div>
+                      <div className="input-cont">
+                        <input onChange={this.inquiryOnChange.bind(this, 'content')} className="form-control" type="text" placeholder="Type a message here..." />
+                      </div>
+                      <div className="btn-cont">
+                        <span className="arrow"> </span>
+                          <a href="" onClick={this.submitInquiry.bind(this)} className="btn blue icn-only">
+                              <i className="fa fa-check icon-white"></i>
+                          </a>
+                      </div>
                     </div>
                 </div>
             </div>

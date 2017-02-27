@@ -14,7 +14,10 @@ export default(state = initialState, action) => {
       return updated
 
     case constants.MESSAGE_CREATED:
-      //updated[action.payload.tenant] = action.payload
+      let tenant = action.payload.tenant
+      let updatedList = (state[tenant]==null) ? [] : Object.assign([], state[tenant])
+      updatedList.push(action.payload)
+      updated[tenant] = updatedList
       return updated
 
     default:
