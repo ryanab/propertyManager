@@ -12,8 +12,7 @@ class ChatHistory extends Component{
   }
 
   componentDidMount(){
-    //this.props.fetchRecentTransactions({tenant: this.props.user.id}) 
-    this.props.fetchMessages({tenant: '58a5efb3c8d85e594db46150'})
+    this.props.fetchMessages({tenant: this.props.user.id})
   }
 
   inquiryOnChange(key, event){
@@ -29,17 +28,22 @@ class ChatHistory extends Component{
     event.preventDefault()
     let updated=Object.assign({}, this.state.message)
     //tenant content subject category
-    updated.tenant = '58a5efb3c8d85e594db46150'
-    //updated.tenant = this.props.user.id
-    updated.category = 'general'
+    updated.tenant = this.props.user.id
+    let creator = {
+      id: this.props.user.id,
+      imageUrl: this.props.user.imageUrl,
+      name: this.props.user.name
+    }
+    updated.creator = creator
     this.props.submitMessage(updated)
   }
 
   render(){
-    let messages = this.props.messages['58a5efb3c8d85e594db46150'] //need to change later to current user
+
+    let messages = this.props.messages[this.props.user.id] //need to change later to current user
     return(
         <div className="col-lg-12 col-xs-12 col-sm-12">
-            <div className="portlet light bordered">
+            <div className="portlet light bordered" >
                 <div className="portlet-title">
                     <div className="caption">
                         <i className="icon-bubble font-hide hide"></i>
@@ -53,10 +57,10 @@ class ChatHistory extends Component{
                         </div>
                     </div>
                 </div>
-                <div className="portlet-body" id="chats">
-                    <div className="scroller" style={{height: '525px'}} data-always-visible="1" data-rail-visible1="1">
+                <div className="portlet-body" id="chats" >
+                    <div className="scroller" data-always-visible="1" data-rail-visible1="1">
                             { (messages==null) ? <div>No message history</div> :
-                              <ul className="chats">
+                              <ul className="chats" style={{overflow:'scroll'}}>
                                 {
                                   messages.map((message, i)=>{            
                                     return <ChatLineItem key={message.id} message={message}/> 

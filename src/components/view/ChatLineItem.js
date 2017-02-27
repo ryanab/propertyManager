@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 export default (props) => {
   let message = props.message
-  //li className is in or out based on tenant vs property manager
+  let inOrOut = (message.tenant == message.creator.id) ? "in" : "out"
   return(
-    <li className="out">
-        <img className="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+    <li className={inOrOut}>
+        <img className="avatar" alt="" src={message.creator.imageUrl}/>
         <div className="message">
             <span className="arrow"> </span>
-            <a href="javascript:;" className="name"> {message.tenant} </a>
+            <a href="javascript:;" className="name"> {message.creator.name} </a>
             <span className="datetime"> at {message.timestamp} </span>
             <span className="body"> {message.content} </span>
         </div>

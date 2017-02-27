@@ -34,7 +34,13 @@ class Authenticate extends Component{
     event.preventDefault()
     this.props.login(this.state.credentials)
     .then((response)=>{
-      browserHistory.push('/home')
+      if(response.role=='tenant'){
+        browserHistory.push('/home')
+        return null
+      }else{
+        browserHistory.push('/home') //later will push to admin path 
+        return null
+      }
     })
     .catch((error)=>{
       alert(error.message)
@@ -45,6 +51,18 @@ class Authenticate extends Component{
   register(event){
     event.preventDefault()
     this.props.register(this.state.credentials)
+      .then((response)=>{
+      if(response.role=='tenant'){
+        browserHistory.push('/home')
+        return null
+      }else{
+        browserHistory.push('/home') //later will push to admin path 
+        return null
+      }
+    })
+    .catch((error)=>{
+      alert(error.message)
+    })
   }
 
   render(){
