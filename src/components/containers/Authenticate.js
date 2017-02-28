@@ -35,10 +35,10 @@ class Authenticate extends Component{
     this.props.login(this.state.credentials)
     .then((response)=>{
       if(response.role=='tenant'){
-        browserHistory.push('/home')
+        browserHistory.push('/profile')
         return null
       }else{
-        browserHistory.push('/home') //later will push to admin path 
+        browserHistory.push('/profile') //later will push to admin path 
         return null
       }
     })
@@ -53,10 +53,10 @@ class Authenticate extends Component{
     this.props.register(this.state.credentials)
       .then((response)=>{
       if(response.role=='tenant'){
-        browserHistory.push('/home')
+        browserHistory.push('/profile')
         return null
       }else{
-        browserHistory.push('/home') //later will push to admin path 
+        browserHistory.push('/profile') //later will push to admin path 
         return null
       }
     })
