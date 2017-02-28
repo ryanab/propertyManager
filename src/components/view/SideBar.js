@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 export default (props) => {
   return (
@@ -31,25 +32,25 @@ export default (props) => {
                     <h3 className="uppercase">Features</h3>
                 </li>
                 <li className="nav-item  ">
-                    <a href="javascript:;" className="nav-link nav-toggle">
-                        <i className="icon-diamond"></i>
-                        <span className="title">My Info</span>
-                        <span className="arrow"></span>
-                    </a>
+                    <Link to={'/profile'} className="nav-link nav-toggle">
+                            <i className="icon-diamond"></i>
+                            <span className="title">My Profile</span>
+                            <span className="arrow"></span>
+                    </Link>
                 </li>
                 <li className="nav-item  ">
-                    <a href="javascript:;" className="nav-link nav-toggle">
-                        <i className="icon-diamond"></i>
-                        <span className="title">Payment History</span>
-                        <span className="arrow"></span>
-                    </a>
+                    <Link to={'/transactions'} className="nav-link nav-toggle">
+                            <i className="icon-diamond"></i>
+                            <span className="title">Payment History</span>
+                            <span className="arrow"></span>
+                    </Link>
                 </li>
                 <li className="nav-item  ">
-                    <a href="javascript:;" className="nav-link nav-toggle">
-                        <i className="icon-diamond"></i>
-                        <span className="title">Chat</span>
-                        <span className="arrow"></span>
-                    </a>
+                    <Link to={'/messages'} className="nav-link nav-toggle">
+                            <i className="icon-diamond"></i>
+                            <span className="title">Message History</span>
+                            <span className="arrow"></span>
+                    </Link>
                 </li>
             </ul>
         </div>

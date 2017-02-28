@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { TenantLedger, TenantRepairs, Authenticate, ChatHistory } from '../containers'
 import {TopBar, SideBar } from '../view'
 
 export default (props) => {
@@ -13,7 +12,9 @@ export default (props) => {
                     <div className="page-content">
                         <h1 className="page-title"> My Account </h1>
                           <div className="row">
-                            <ChatHistory />
+                            <main>
+                              {props.children}
+                            </main>
                           </div>
                     </div>
                 </div>
